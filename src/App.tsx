@@ -18,7 +18,10 @@ const App: React.FC = () => {
         setList(prev => [toDo,...prev]);
         localStorage.setItem(`${toDo.id}`, JSON.stringify(toDo));       	
     }
-	// useEffect(()=>localStorage.setItem('test', 1);)
+	useEffect(()=>{
+		const saved =  JSON.parse(localStorage.getItem('list') || '[]')
+		setList(saved)
+	},[])
 	return 	<div className = "container">
 				<header>
 					<div></div>

@@ -7,7 +7,6 @@ type propsType = {
 }
 export const List: React.FC<propsType> = ({list, setList}) => {
     const removeTodo = (id: number) => {
-        // setList((prev: todoType[]) => prev.filter(el=> el.id!==id))
         setList(list.filter(el=> el.id!==id))
     }
     const toggle = (id: number) => {
