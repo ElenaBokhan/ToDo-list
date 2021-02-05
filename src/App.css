@@ -26,14 +26,14 @@ main{
 	flex-wrap: wrap;
 	align-content: flex-start;
 }
-form{
+.input-holder{
     display: flex;
     justify-content: space-between;
     height: 65px;
     width: 100%;
     padding: 20px 20px 0;
 }
-input{
+input[type="text"]{
 	flex-grow: 8;
 	border-radius: 5px;
 	padding: 10px;
@@ -57,72 +57,24 @@ button:hover{
 .wrapper-tasks{
 	width: 100%;
 	display: flex;
+	flex-direction: column;
 	padding: 20px;
-}
-.list-tasks{
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;    
-	width: 100%;	
 }
 .task{
-	width: 100%;
-	background-color: #bba2ff;
-	padding: 10px;
-	border: 1px solid #7455c9;	
-	display: grid;
-	grid-template-columns: 3fr 1fr 25px 25px 25px;
-	gap: 10px;
-	cursor: pointer;
-}
-.task:focus-within{
-	background-color:#7455c9;
-	color: aliceblue; 
-}
-.task:first-child{
-	border-radius: 10px 10px 0 0 ;
-}
-.task:last-child{
-	border-radius: 0 0 10px 10px;
-}
-.task div{
-	width: 25px;
-	height: 25px;
-	background-color: #5430b4;
 	display: flex;	
+	justify-content: space-between; 
+	align-items: center; 
+	background-color: #bba2ff;
+	padding: 10px 150px;
+	border: 1px solid #7455c9;	
 }
-.task span:nth-child(2){
-	text-align: right;
+/* .task input{
+	flex-grow: 1;
+} */
+.task label{
+	flex-basis: 80%;
 }
-.task span{	
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-.selectTask{	
-	background-color:#7455c9;
-	color: aliceblue;
-}
-svg{
-	fill: #d4c5fd;
-	margin: auto;
-    display: block
-}
-.description{	
-	padding: 20px;
-	border: 1px solid #7455c9;
-	border-radius: 10px;
-	margin-left: 14px;
-    width: 80%;
+input[type="checkbox"]:checked+label{
+	text-decoration: line-through;
 }
 
-@media (max-width: 576px){
-	.wrapper-tasks {
-		flex-wrap: wrap;
-	}
-	.description {
-		padding: 20px;		
-		width: 100%;
-		margin: 20px 0;
-	}
-} 
